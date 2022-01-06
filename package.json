@@ -21,6 +21,9 @@
     "@emotion/styled": "^11.6.0",
     "framer-motion": "^5.5.5",
     "gatsby": "^4.4.0",
+    "gatsby-source-filesystem": "^4.4.0",
+    "gatsby-transformer-json": "^4.4.0",
+    "gatsby-transformer-remark": "^5.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.3.1"

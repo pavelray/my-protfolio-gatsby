@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Covid-19 Tracker",
+        "slug": "covid-19-tracker-web",
+        "url": "https://pavelray.github.io/covid-19-tracker-web/",
+        "link": "https://github.com/pavelray/covid-19-tracker-web",
+        "description": "A covid 19 tracker developed using React. This web application provides overall status for global countries and some details for India. Developed in the early stage of the pandemic (2020).",
+        "languages": "javascript, reactjs, thunk, ant design"
+    },
+    {
+        "title": "My Another Project",
+        "slug": "another-2",
+        "url": "https://google.com",
+        "link": "https://github.com",
+        "description": "This is my another project",
+        "languages": "javascript, reactjs"
+    }
+]

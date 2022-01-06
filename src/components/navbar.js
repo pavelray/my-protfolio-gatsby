@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql, Link, useStaticQuery } from "gatsby"
 
 import {
   chakra,
@@ -23,6 +23,24 @@ export default function App() {
   const bg = useColorModeValue("white", "gray.800")
   const mobileNav = useDisclosure()
   const { colorMode, toggleColorMode } = useColorMode()
+
+  const data = useStaticQuery(graphql`
+    query MyQuery {
+      site {
+        siteMetadata {
+          title
+          menu {
+            title
+            url
+          }
+          author
+        }
+      }
+    }
+  `)
+
+  const { menu, title, author } = data.site.siteMetadata
+
   return (
     <React.Fragment>
       <chakra.header
@@ -35,9 +53,9 @@ export default function App() {
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Flex>
             <HStack>
-              <Avatar name="Dan Abrahmov" src="https://bit.ly/dan-abramov" />
+              <Avatar name={author} src="https://bit.ly/dan-abramov" />
               <Heading as="h4" size="lg">
-                <Link to="/">pavel.dev</Link>
+                <Link to="/">{title}</Link>
               </Heading>
             </HStack>
           </Flex>
@@ -48,15 +66,13 @@ export default function App() {
               color="brand.500"
               display={{ base: "none", md: "inline-flex" }}
             >
-              <Button variant="ghost">
-                <Link to="/">Home</Link>
-              </Button>
-              <Button variant="ghost">
-                <Link to="/project">Project</Link>
-              </Button>
-              <Button variant="ghost">
-                <Link to="/blog">Blog</Link>
-              </Button>
+              {menu.map((link, index) => (
+                <Link to={link.url} key={index}>
+                  <Button variant="ghost" >
+                    {link.title}
+                  </Button>
+                </Link>
+              ))}
             </HStack>
             <Button onClick={toggleColorMode}>
               {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
@@ -91,15 +107,11 @@ export default function App() {
                   aria-label="Close menu"
                   onClick={mobileNav.onClose}
                 />
-                <Button variant="ghost">
-                  <Link to="/">Home</Link>
-                </Button>
-                <Button w="full" variant="ghost">
-                  <Link to="/project">Project</Link>
-                </Button>
-                <Button w="full" variant="ghost">
-                  <Link to="/blog">Blog</Link>
-                </Button>
+                {menu.map((link, index) => (
+                  <Button w="full" variant="ghost" key={index}>
+                    <Link to={link.url}>{link.title}</Link>
+                  </Button>
+                ))}
               </VStack>
             </Box>
           </HStack>
