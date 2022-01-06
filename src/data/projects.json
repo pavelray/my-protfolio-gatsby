@@ -4,15 +4,35 @@
         "slug": "covid-19-tracker-web",
         "url": "https://pavelray.github.io/covid-19-tracker-web/",
         "link": "https://github.com/pavelray/covid-19-tracker-web",
+        "image": "./images/projects/covid19-tracker.jpeg",
         "description": "A covid 19 tracker developed using React. This web application provides overall status for global countries and some details for India. Developed in the early stage of the pandemic (2020).",
         "languages": "javascript, reactjs, thunk, ant design"
     },
     {
-        "title": "My Another Project",
-        "slug": "another-2",
-        "url": "https://google.com",
-        "link": "https://github.com",
-        "description": "This is my another project",
-        "languages": "javascript, reactjs"
+        "title": "To Do - App",
+        "slug": "todo-redux",
+        "url": "",
+        "link": "https://github.com/pavelray/todo-redux",
+        "image": "./images/projects/todo.jpeg",
+        "description": "This is a basic todo app. In this app I used redux for state management. I have coverd basic functionalities. But we can do lot more with this app. I have mentioned few points. Please feel free to add any usefull funcationalities into this project.",
+        "languages": "typescript, angularjs"
+    },
+    {
+        "title": "Country Details App",
+        "slug": "country-details-app",
+        "url": "https://pavelray.github.io/country-details-app/",
+        "link": "https://github.com/pavelray/country-details-app",
+        "image": "./images/projects/country-details.jpeg",
+        "description": "An application to get the details of all the countries.",
+        "languages": "reactjs, javascript"
+    },
+    {
+        "title": "Country Details App",
+        "slug": "country-details-app",
+        "url": "https://pavelray.github.io/country-details-app/",
+        "link": "https://github.com/pavelray/country-details-app",
+        "image": "./images/projects/country-details.jpeg",
+        "description": "An application to get the details of all the countries.",
+        "languages": "reactjs, javascript"
     }
 ]

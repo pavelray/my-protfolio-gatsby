@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link, useStaticQuery } from "gatsby"
+import Img from 'gatsby-image'
 
 import {
   chakra,
@@ -36,11 +37,17 @@ export default function App() {
           author
         }
       }
+      imageSharp(id: {eq: "9800edd6-f41f-5727-8932-ca0d15614fb1"}) {
+        id
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
     }
   `)
 
   const { menu, title, author } = data.site.siteMetadata
-
+  const imageFuild = data.imageSharp.fluid
   return (
     <React.Fragment>
       <chakra.header
@@ -52,8 +59,8 @@ export default function App() {
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Flex>
+            <Img fluid={imageFuild} style={{width:'50px', height: '50px', borderRadius:'50%', marginRight:'10px'}} />
             <HStack>
-              <Avatar name={author} src="https://bit.ly/dan-abramov" />
               <Heading as="h4" size="lg">
                 <Link to="/">{title}</Link>
               </Heading>

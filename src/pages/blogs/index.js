@@ -1,4 +1,4 @@
-import { Box, Stack, Image } from "@chakra-ui/react"
+import { Box, Heading, Image, SimpleGrid } from "@chakra-ui/react"
 import { graphql, Link } from "gatsby"
 import React from "react"
 import Layout from "../../components/layout"
@@ -7,8 +7,8 @@ const Blog = ({ data }) => {
   const blogData = data.allMarkdownRemark.nodes
   return (
     <Layout>
-      <div>This is my blog preview page</div>
-      <Stack direction={['column', 'row']} spacing='24px'>
+      <Heading textAlign="center" mb="20" textTransform="capitalize">My Blogs</Heading>
+      <SimpleGrid columns={[1, 2, 3]} spacing='40px'>
       {blogData.map((blog, index) => {
         return (
           <Box
@@ -41,7 +41,7 @@ const Blog = ({ data }) => {
           </Box>
         )
       })}
-      </Stack>
+      </SimpleGrid>
     </Layout>
   )
 }

@@ -18,6 +18,8 @@ module.exports = {
   plugins: [
     "@chakra-ui/gatsby-plugin",
     "gatsby-transformer-remark",
+    "gatsby-transformer-sharp",
+    "gatsby-plugin-sharp",
     {
       resolve: `gatsby-source-filesystem`,
       options: {

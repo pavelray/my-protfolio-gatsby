@@ -1,15 +1,17 @@
-import { DiGithubBadge } from "react-icons/all"
+import { GrGithub, GrShare } from "react-icons/gr"
 import {
   Badge,
   Box,
-  Button,
   Flex,
+  Heading,
   IconButton,
-  Image,
+  SimpleGrid,
   Spacer,
   Stack,
+
 } from "@chakra-ui/react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 import React from "react"
 import Layout from "../../components/layout"
 
@@ -18,8 +20,8 @@ const Project = ({ data }) => {
 
   return (
     <Layout>
-      <div>This is my project preview page</div>
-      <Stack direction={["column", "row"]} spacing="24px">
+      <Heading textAlign="center" mb="20" textTransform="capitalize">Projects I've worked on</Heading>
+      <SimpleGrid columns={[1, 2, 3]} spacing='40px'>
         {projectData.map((project, index) => {
           const languages = project.languages.split(",")
 
@@ -31,7 +33,11 @@ const Project = ({ data }) => {
               overflow="hidden"
               key={index}
             >
-              <Image src="https://bit.ly/2Z4KKcF" alt={project.title} />
+              <Img
+                fluid={project.image.childImageSharp.fluid}
+                style={{ width: "100%" }}
+              />
+
               <Box p="4">
                 <Box mt="1" fontWeight="semibold" as="h4" lineHeight="tight">
                   {project.title}
@@ -48,24 +54,32 @@ const Project = ({ data }) => {
                 </Box>
                 <Box mt="4" as="p">
                   <Flex>
-                    <IconButton
-                      variant="ghost"
-                      colorScheme="teal"
-                      aria-label="View Code"
-                      fontSize="20px"
-                      icon={<DiGithubBadge />}
-                    />
+                    <Link to={project.link}>
+                      <IconButton
+                        variant="ghost"
+                        colorScheme="teal"
+                        aria-label="View Code"
+                        fontSize="20px"
+                        icon={<GrGithub />}
+                      />
+                    </Link>
                     <Spacer />
-                    <Button size="sm" variant="ghost" colorScheme="teal">
-                      View Live
-                    </Button>
+                    <Link to={project.url}>
+                      <IconButton
+                        variant="ghost"
+                        colorScheme="teal"
+                        aria-label="View Live"
+                        fontSize="20px"
+                        icon={<GrShare />}
+                      />
+                    </Link>
                   </Flex>
                 </Box>
               </Box>
             </Box>
           )
         })}
-      </Stack>
+      </SimpleGrid>
     </Layout>
   )
 }
@@ -81,6 +95,13 @@ export const query = graphql`
         description
         languages
         link
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-hello-world",
+  "name": "my-portfolio-gatsby",
   "private": true,
-  "description": "A simplified bare-bones starter for Gatsby",
+  "description": "A Portfolio Website for Developer",
   "version": "0.1.0",
   "license": "0BSD",
+  "author":"Pavel Ray <pavelray@gmail.com>",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -21,9 +22,12 @@
     "@emotion/styled": "^11.6.0",
     "framer-motion": "^5.5.5",
     "gatsby": "^4.4.0",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-sharp": "^4.4.0",
     "gatsby-source-filesystem": "^4.4.0",
     "gatsby-transformer-json": "^4.4.0",
     "gatsby-transformer-remark": "^5.4.0",
+    "gatsby-transformer-sharp": "^4.4.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^4.3.1"
