@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react"
+import { Box, Heading } from "@chakra-ui/react"
 import { graphql } from "gatsby"
 import React from "react"
 import Layout from "../components/layout"
@@ -9,10 +9,7 @@ const BlogTemplate = ({ data }) => {
   return (
     <Layout>
       <Heading>{title}</Heading>
-      <Heading as="h3" size="lg">
-        I'm Pavel Ray
-      </Heading>
-      <div dangerouslySetInnerHTML={{ __html: html }} />
+      <Box dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   )
 }

@@ -14,7 +14,6 @@ import {
   IconButton,
   CloseButton,
   useColorMode,
-  Avatar,
   Heading,
 } from "@chakra-ui/react"
 import { MoonIcon, SunIcon } from "@chakra-ui/icons"
@@ -59,7 +58,7 @@ export default function App() {
       >
         <Flex alignItems="center" justifyContent="space-between" mx="auto">
           <Flex>
-            <Img fluid={imageFuild} style={{width:'50px', height: '50px', borderRadius:'50%', marginRight:'10px'}} />
+            <Img fluid={imageFuild} style={{width:'50px', height: '50px', borderRadius:'50%', marginRight:'10px'}} alt={author} />
             <HStack>
               <Heading as="h4" size="lg">
                 <Link to="/">{title}</Link>

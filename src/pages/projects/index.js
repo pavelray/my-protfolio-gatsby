@@ -8,6 +8,7 @@ import {
   SimpleGrid,
   Spacer,
   Stack,
+  Text,
 
 } from "@chakra-ui/react"
 import { graphql, Link } from "gatsby"
@@ -35,7 +36,7 @@ const Project = ({ data }) => {
             >
               <Img
                 fluid={project.image.childImageSharp.fluid}
-                style={{ width: "100%" }}
+                style={{ width: "100%", maxHeight:'200px' }}
               />
 
               <Box p="4">
@@ -43,7 +44,9 @@ const Project = ({ data }) => {
                   {project.title}
                 </Box>
                 <Box mt="3" fontWeight="light" as="p" lineHeight="tight">
-                  {project.description}
+                  <Text noOfLines={3}>
+                    {project.description}
+                  </Text> 
                 </Box>
                 <Box mt="6" fontWeight="semibold" as="p" lineHeight="tight">
                   <Stack direction="row">
