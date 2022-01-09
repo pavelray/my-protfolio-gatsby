@@ -45,8 +45,8 @@ export default function App() {
     }
   `)
 
-  const { menu, title, author } = data.site.siteMetadata
-  const imageFuild = data.imageSharp.fluid
+  const { menu, title, author } = data?.site?.siteMetadata
+  const imageFuild = data?.imageSharp?.fluid
   return (
     <React.Fragment>
       <chakra.header
