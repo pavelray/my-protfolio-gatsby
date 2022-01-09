@@ -1,5 +1,6 @@
-import { Box, Heading, Image, SimpleGrid } from "@chakra-ui/react"
+import { Box, Heading, SimpleGrid } from "@chakra-ui/react"
 import { graphql, Link } from "gatsby"
+import Img from 'gatsby-image'
 import React from "react"
 import Layout from "../../components/layout"
 
@@ -10,6 +11,8 @@ const Blog = ({ data }) => {
       <Heading textAlign="center" mb="20" textTransform="capitalize">My Blogs</Heading>
       <SimpleGrid columns={[1, 2, 3]} spacing='40px'>
       {blogData.map((blog, index) => {
+        const imageFuid=blog.frontmatter?.banner?.childImageSharp?.fluid;
+
         return (
           <Box
             maxW="sm"
@@ -18,7 +21,7 @@ const Blog = ({ data }) => {
             overflow="hidden"
             key={index}
           >
-            <Image src="https://bit.ly/2Z4KKcF" alt={blog.frontmatter.title} />
+            <Img fluid={imageFuid} alt={blog.frontmatter.title} />
             <Box p="6">
               <Box
                 mt="1"
@@ -48,7 +51,7 @@ const Blog = ({ data }) => {
 
 export const query = graphql`
   query BlogQuery {
-    allMarkdownRemark(filter: { frontmatter: { path: { eq: "/blogs" } } }) {
+    allMarkdownRemark{
       nodes {
         frontmatter {
           link
@@ -56,6 +59,13 @@ export const query = graphql`
           title
           path
           type
+          banner {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
         }
       }
     }

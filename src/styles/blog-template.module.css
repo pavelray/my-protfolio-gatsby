@@ -1,0 +1,31 @@
+.htmlClass {
+  margin-top: 40px;
+}
+
+.htmlClass h2 {
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.htmlClass h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.htmlClass ul {
+    margin-left: 18px;
+}
+
+.linkDiv{
+    margin-top: 40px;
+}
+
+.linkDiv a{
+    font-weight: bold;
+    font-style: italic;
+}
+
