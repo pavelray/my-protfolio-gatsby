@@ -9,7 +9,7 @@ const { MENU_DATA } = require("./src/constants");
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "sitename.dev",
+    title: "pavelray.in",
     description: "Portfolio for Pavel Ray, Front end developer",
     email: "pavelray@gmail.com",
     menu: MENU_DATA,
